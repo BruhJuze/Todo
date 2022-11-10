@@ -47,11 +47,10 @@ let objTodo = JSON.parse(todoFromls);
 console.log(objTodo);
 
 let ul = document.createElement("ul");
-
-myDiv.innerHTML = ul;
+let container = document.createElement("div");
+ul.id = "myList";
 
 for (let i = 0; i < tlength; i++) {
-  let container = document.createElement("div");
   let li = document.createElement("li");
   let myCheckbox = document.createElement("input");
   let myLabel = document.createElement("label");
@@ -77,4 +76,6 @@ console.log('checked')
 
   myDiv.appendChild(container);
 }
-//myDiv.innerHTML += "</ul>";
+
+myList.appendChild(li);
+
