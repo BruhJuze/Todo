@@ -43,6 +43,7 @@ let thirdThing = new Todo("Eat breakfast", "06:45", true);
 let fourthThing = new Todo("Go to school", "07:15", true);
 let fithThing = new Todo("Come home & grind with your boys", "~16:00", false);
 let sixthThing = new Todo("sleep and repeat at schooldays", "02:00", false);
+//let testThing = new Todo("test", "test", checkTest);
 
 let todoschoolday = [
   firstThing,
@@ -114,7 +115,7 @@ clearBtn.style.float = "right";
 clearBtn.textContent = 'X';
 clearBtn.style.margin = "5px";
 clearCheckedBtn.style.float = "right";
-clearCheckedBtn.textContent = "Strike checked";
+clearCheckedBtn.textContent = "Clear checked";
 clearCheckedBtn.style.margin = "5px";
 addBtn.style.float = "right";
 addBtn.textContent = "+";
@@ -130,7 +131,7 @@ myDiv.appendChild(clearBtn);
 
 function myforloop(){ 
 
-  myLabel.innerHTML = "";
+  myLabel.remove();
   
 for (let i = 0; i < tlength; i++) {
   let li = document.createElement("li");
@@ -150,18 +151,18 @@ li.innerHTML = todoschoolday[i].what + " at " + todoschoolday[i].when;
 
 myCheckbox.innerHTML = myCheckbox.checked = todoschoolday[i].isDone;
 
-  
+  container.appendChild(ul);
+  ul.appendChild(myLabel);
   li.appendChild(myCheckbox);
+  myLabel.appendChild(li);
+  
 
  
   if (myCheckbox.checked == true && firstround>0){
-    li.innerHTML = (todoschoolday[i].what + " at " + todoschoolday[i].when).strike();
+    myLabel.innerHTML = "";
       console.log("test");
   }
-
-  container.appendChild(ul);
-  ul.appendChild(myLabel);
-  myLabel.appendChild(li);
+  
   
 }
 myDiv.appendChild(container);
