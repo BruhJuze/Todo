@@ -75,6 +75,8 @@ console.log('checked')
   container.appendChild(myLabel);
 
   myDiv.appendChild(container);
+
+  
 }
 
 myList.appendChild(li);
