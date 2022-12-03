@@ -62,7 +62,6 @@ let tlength = todoschoolday.length;
 localStorage.setItem("todo", JSON.stringify(todoschoolday));
 
 let todoFromls = localStorage.getItem("todo");
-console.log("todo", todoFromls);
 
 let objTodo = JSON.parse(todoFromls);
 
@@ -163,17 +162,15 @@ function myforloop() {
 
     // console.log(altCheck);
 
-    if (myCheckbox.checked == true && firstround > 0) {
+    if (objTodo[i].isDone == true && firstround > 0) {
       li.remove();
     }
 
     myCheckbox.addEventListener("click", function () {
       if (this.checked) {
-        altCheck = true;
-        todoschoolday[i].isDone = true;
+        objTodo[i].isDone = true; console.log("todo", objTodo);
       } else {
-        altCheck = false;
-        todoschoolday[i].isDone = false;
+        objTodo[i].isDone = false; console.log("todo", objTodo);
       }
     });
     console.log(myCheckbox.checked);
