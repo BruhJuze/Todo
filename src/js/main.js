@@ -147,13 +147,13 @@ function myforloop() {
     myCheckbox.id = "my_check";
     myLabel.id = "my_check";
 
-    if (todoschoolday[i].when == "") {
-      li.innerHTML = todoschoolday[i].what + todoschoolday[i].when;
+    if (objTodo[i].when == "") {
+      li.innerHTML = objTodo[i].what + objTodo[i].when;
     } else {
-      li.innerHTML = todoschoolday[i].what + " at " + todoschoolday[i].when;
+      li.innerHTML = objTodo[i].what + " at " + objTodo[i].when;
     }
 
-    myCheckbox.innerHTML = myCheckbox.checked = todoschoolday[i].isDone;
+    myCheckbox.innerHTML = myCheckbox.checked = objTodo[i].isDone;
 
     container.appendChild(ul);
     ul.appendChild(myLabel);
